@@ -176,8 +176,6 @@ def user_stats(df):
     else:
         print("\n There is no gender informaiton in this dataset!")
 
-
-
     # Display earliest, most recent, and most common year of birth
 
     if "Birth Year" in df.columns:
@@ -193,7 +191,16 @@ def user_stats(df):
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
 
-
+def show_raw_data(df):
+    #seperate the raw data as every 5 lines:
+    
+    for i in range(0, len(df), 5):        
+        show_raw_data = input("\nWould you like to reivew 5 lines of raw data for the dateset?\
+                              \nPlease Enter 'yes'/'no' ").lower()
+        if show_raw_data != 'yes':
+            break
+        print(df.iloc[i: i + 5])
+        
 def main():
     while True:
         city, month, day = get_filters()
@@ -203,6 +210,7 @@ def main():
         station_stats(df)
         trip_duration_stats(df)
         user_stats(df)
+        show_raw_data(df)
 
         restart = input('\nWould you like to restart? Enter yes or no.\n')
         if restart.lower() != 'yes':
