@@ -5,6 +5,7 @@ import numpy as np
 import pandas as pd 
 import time 
 
+#Dictionary link city name vs data file 
 CITY_DATA = { 'chicago': 'chicago.csv',
               'new york city': 'new_york_city.csv',
               'washington': 'washington.csv' }
@@ -68,8 +69,7 @@ def get_filters():
     return city, month, day
 
 def time_stats(df):
-    """Displays statistics on the most frequent times of travel."""
-
+    #Displays statistics on the most frequent times of travel.
     print('\nCalculating The Most Frequent Times of Travel...\n')
     start_time = time.time()
 
@@ -98,12 +98,15 @@ def load_data(city, month, day):
     """
     # load data file into a dataframe
     df = pd.read_csv(CITY_DATA[city])
+  
     # convert the Start Time column to datetime
     df['Start Time'] = pd.to_datetime(df['Start Time'])
+   
     # extract month and day of week from Start Time to create new columns
     df['month'] = df['Start Time'].dt.month
     df['day_of_week'] = df['Start Time'].dt.weekday_name
     df['hour'] = df['Start Time'].dt.hour
+   
     # filter by month if applicable
     if month != 'all':
         # use the index of the months list to get the corresponding int
@@ -121,8 +124,7 @@ def load_data(city, month, day):
     return df
 
 def station_stats(df):
-    """Displays statistics on the most popular stations and trip."""
-
+    #Displays statistics on the most popular stations and trip.
     print('\nCalculating The Most Popular Stations and Trip...\n')
     start_time = time.time()
 
@@ -141,8 +143,7 @@ def station_stats(df):
 
 
 def trip_duration_stats(df):
-    """Displays statistics on the total and average trip duration."""
-
+    # Displays statistics on the total and average trip duration.
     print('\nCalculating Trip Duration...\n')
     start_time = time.time()
 
@@ -158,7 +159,7 @@ def trip_duration_stats(df):
 
 
 def user_stats(df):
-    """Displays statistics on bikeshare users."""
+    #Displays statistics on bikeshare users.
 
     print('\nCalculating User Stats...\n')
     start_time = time.time()
@@ -181,7 +182,6 @@ def user_stats(df):
         print("\n There is no gender informaiton in this dataset!")
 
     # Display earliest, most recent, and most common year of birth
-
     if "Birth Year" in df.columns:
         
         user_birth_earliest = int(df['Birth Year'].min())
@@ -197,8 +197,7 @@ def user_stats(df):
     print('-'*40)
 
 def show_raw_data(df):
-    #seperate the raw data as every 5 lines:
-    
+    #seperate the raw data as every 5 lines:   
     for i in range(0, len(df), 5):        
         show_raw_data = input("\nWould you like to reivew 5 lines of raw data for the dateset?\
                               \nPlease Enter 'yes'/'no' ").lower()
