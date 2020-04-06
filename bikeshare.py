@@ -1,6 +1,10 @@
-import numpy as np
-import pandas as pd
-import time
+
+#tested in pandas version 0.22 and python 3.6 enviroment
+
+import numpy as np 
+import pandas as pd 
+import time 
+
 CITY_DATA = { 'chicago': 'chicago.csv',
               'new york city': 'new_york_city.csv',
               'washington': 'washington.csv' }
@@ -179,6 +183,7 @@ def user_stats(df):
     # Display earliest, most recent, and most common year of birth
 
     if "Birth Year" in df.columns:
+        
         user_birth_earliest = int(df['Birth Year'].min())
         user_birth_most_recent = int(df['Birth Year'].max())
         user_birth_common = int(df['Birth Year'].mode())
@@ -215,7 +220,6 @@ def main():
         restart = input('\nWould you like to restart? Enter yes or no.\n')
         if restart.lower() != 'yes':
             break
-
 
 if __name__ == "__main__":
 	main()
