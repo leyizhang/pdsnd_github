@@ -14,17 +14,17 @@ Please find the course details: [Programming for Data Science with Python ](http
     * new_york_city.csv
     * washington.csv
 ### Getting Started
-Please install the python version 3.6
-1. Library: 
-	*pandas 0.22
+Please install
+1. python:
+    *version 3.6
+2. Library: 
+    *pandas 0.22
 	*numpy
 	*time
 ### Credits
 I have to thank for Udacity to create this interesting project to let me practicing on the Git, Github and Python 
 skills in one project.
 ### License
-MIT License
-
 Copyright (c) [2020] [Leyi Zhang]
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
