@@ -7,8 +7,12 @@ US Bike Share Analysis
 This project is for Programming for Data Science with Python Udacity Course.
 
 ### Files used
-python file: bikeshare.py
-data file: chicago.csv, new_york_city.csv, washington.csv
+1. python file: 
+..* bikeshare.py
+2. data file: 
+..* chicago.csv
+..* new_york_city.csv
+..* washington.csv
 
 ### Credits
 I have to thank for Udacity to create this interesting project to let me practice on the Git, Github and python 
